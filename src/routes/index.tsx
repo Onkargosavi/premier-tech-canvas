@@ -149,6 +149,7 @@ const TESTIMONIALS = [
 function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showAllCourses, setShowAllCourses] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
