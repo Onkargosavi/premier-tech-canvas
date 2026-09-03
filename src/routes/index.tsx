@@ -8,9 +8,6 @@ import {
   ArrowRight,
   Plus,
   Minus,
-  GraduationCap,
-  UserRoundCheck,
-  BadgeCheck,
   ShieldCheck,
   MapPin,
   Phone,
@@ -21,6 +18,7 @@ import {
 } from "lucide-react";
 import heroImage from "@/assets/hero-students.jpg";
 import { TechMarquee } from "@/components/site/Marquee";
+import { WhyUsGallery } from "@/components/site/WhyUsGallery";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -109,24 +107,6 @@ const FAQS = [
   {
     q: "Will I work on real projects?",
     a: "Each learner ships at least two production-style projects with code reviews from working industry mentors.",
-  },
-];
-
-const FEATURES = [
-  {
-    icon: GraduationCap,
-    title: "Industry Curriculum",
-    detail: "Syllabus rebuilt every quarter with hiring managers so you learn what companies interview on.",
-  },
-  {
-    icon: UserRoundCheck,
-    title: "1:1 Mentorship",
-    detail: "Small batches with a dedicated mentor tracking your progress, code quality and interview prep.",
-  },
-  {
-    icon: BadgeCheck,
-    title: "Placement Support",
-    detail: "Portfolio, resume, mock drives and referrals continue until you sign your offer letter.",
   },
 ];
 
@@ -350,21 +330,21 @@ function Home() {
           </div>
         </section>
 
-        {/* FEATURES */}
-        <section className="border-y border-border bg-muted/40 py-16">
-          <div className="mx-auto max-w-7xl px-5 lg:px-8">
-            <h2 className="text-center font-display text-3xl text-primary sm:text-4xl">Why Us</h2>
-            <div className="mt-9 grid gap-5 md:grid-cols-3">
-              {FEATURES.map(({ icon: Icon, title, detail }) => (
-                <article key={title} className="surface-card p-7">
-                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary text-primary-foreground">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-5 font-display text-lg font-semibold text-primary">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{detail}</p>
-                </article>
-              ))}
-            </div>
+        {/* WHY US — cinematic gallery */}
+        <section className="border-y border-border bg-primary py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-5 text-center lg:px-8">
+            <span className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-foreground/60">
+              The HATAEC difference
+            </span>
+            <h2 className="mt-3 font-display text-3xl text-primary-foreground sm:text-4xl">
+              Why students choose <span className="text-accent">us</span>
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm text-primary-foreground/70">
+              Five promises, delivered in every batch — hover a card to read the story.
+            </p>
+          </div>
+          <div className="mt-10">
+            <WhyUsGallery />
           </div>
         </section>
 
