@@ -254,59 +254,16 @@ function Home() {
                   Learn More
                 </a>
               </div>
-
-              <div className="mt-10 overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-soft)]">
-                <img
-                  src={heroImage}
-                  alt="Students learning software development at HATAEC TECH"
-                  width={1280}
-                  height={960}
-                  className="h-64 w-full object-cover sm:h-80"
-                />
-              </div>
             </div>
 
-            <div className="surface-card float-soft p-6 sm:p-8">
-              <h2 className="font-display text-xl font-semibold text-primary">Enquiry Form</h2>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Share your details, our counsellor calls back within 24 hours.
-              </p>
-              <form
-                className="mt-6 space-y-3"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  (e.currentTarget as HTMLFormElement).reset();
-                }}
-              >
-                <input required placeholder="Name" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-ring/25" />
-                <input required type="email" placeholder="Email" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-ring/25" />
-                <input required type="tel" placeholder="Phone No." className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-ring/25" />
-                <select
-                  required
-                  defaultValue=""
-                  className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition focus:border-secondary focus:ring-2 focus:ring-ring/25"
-                >
-                  <option value="" disabled>
-                    Enquiry For
-                  </option>
-                  {COURSES.map((c) => (
-                    <option key={c.title}>{c.title}</option>
-                  ))}
-                  <option>Internship</option>
-                  <option>Corporate Training</option>
-                </select>
-                <textarea
-                  rows={4}
-                  placeholder="How can we help?"
-                  className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-ring/25"
-                />
-                <button
-                  type="submit"
-                  className="w-full rounded-xl bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground transition-transform hover:-translate-y-0.5"
-                >
-                  Send Enquiry
-                </button>
-              </form>
+            <div className="animate-fade-in overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-soft)]">
+              <img
+                src={heroImage}
+                alt="Students learning software development at HATAEC TECH"
+                width={1280}
+                height={960}
+                className="h-80 w-full object-cover sm:h-[28rem] lg:h-[32rem]"
+              />
             </div>
           </div>
         </section>
