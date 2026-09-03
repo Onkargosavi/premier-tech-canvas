@@ -77,19 +77,25 @@ const COURSES = [
   },
 ];
 
-const POPULAR = [
-  "C Programming",
-  "C++",
-  "Core Java",
-  "Advanced Java",
-  "Spring Boot",
-  "Vaadin",
-  "Python",
-  "AWS Cloud",
-  "HTML/CSS",
-  "JavaScript",
-  "Bootstrap",
-  "PHP & MySQL",
+const DEVICON = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/";
+
+const COURSE_LIST = [
+  { name: "C Programming", icon: "c/c-original.svg" },
+  { name: "C++", icon: "cplusplus/cplusplus-original.svg" },
+  { name: "Core Java", icon: "java/java-original.svg" },
+  { name: "Advanced Java", icon: "java/java-original.svg" },
+  { name: "Spring Boot", icon: "spring/spring-original.svg" },
+  { name: "React", icon: "react/react-original.svg" },
+  { name: "Python", icon: "python/python-original.svg" },
+  { name: "AWS Cloud", icon: "amazonwebservices/amazonwebservices-original-wordmark.svg" },
+  { name: "HTML5 & CSS3", icon: "html5/html5-original.svg" },
+  { name: "JavaScript", icon: "javascript/javascript-original.svg" },
+  { name: "Bootstrap", icon: "bootstrap/bootstrap-original.svg" },
+  { name: "PHP & MySQL", icon: "php/php-original.svg" },
+  { name: "Node.js", icon: "nodejs/nodejs-original.svg" },
+  { name: "MongoDB", icon: "mongodb/mongodb-original.svg" },
+  { name: "TypeScript", icon: "typescript/typescript-original.svg" },
+  { name: "Docker", icon: "docker/docker-original.svg" },
 ];
 
 const FAQS = [
