@@ -19,6 +19,7 @@ import {
 import heroImage from "@/assets/hero-students.jpg";
 import { TechMarquee } from "@/components/site/Marquee";
 import { WhyUsGallery } from "@/components/site/WhyUsGallery";
+import { AboutCollage } from "@/components/site/AboutCollage";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -263,26 +264,57 @@ function Home() {
         </section>
 
         {/* ABOUT */}
-        <section id="about" className="border-y border-border bg-muted/40 py-16">
-          <div className="mx-auto max-w-5xl px-5 text-center lg:px-8">
-            <h2 className="font-display text-3xl text-primary sm:text-4xl">
-              “I am <span className="text-gradient">a developer in the making</span>”
-            </h2>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              {VALUES.map((v) => (
-                <span
-                  key={v}
-                  className="rounded-xl border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground shadow-[var(--shadow-soft)]"
-                >
-                  {v}
-                </span>
-              ))}
+        <section id="about" className="border-y border-border bg-muted/40 py-16 lg:py-24">
+          <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:gap-16 lg:px-8">
+            <div className="animate-fade-in">
+              <AboutCollage />
             </div>
-            <p className="mt-8 font-display text-lg font-semibold text-secondary">Since 2024</p>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              We started as a small mentor-led classroom and grew into a training studio where every
-              batch ships real software before graduating.
-            </p>
+
+            <div className="animate-fade-in">
+              <span className="text-xs font-semibold uppercase tracking-[0.24em] text-secondary">
+                Who we are
+              </span>
+              <h2 className="mt-4 font-display text-3xl leading-[1.12] text-primary sm:text-4xl lg:text-5xl">
+                Building skills. <span className="text-gradient">Creating opportunities.</span>
+              </h2>
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+                HATAEC TECH began in 2024 as a single mentor-led classroom and grew into a training
+                studio where every batch ships real software before graduating. We rebuild our
+                syllabus with hiring managers, pair every learner with a mentor, and back it with
+                placement support that continues until the offer letter is signed.
+              </p>
+
+              <div className="mt-9 grid gap-6 border-t border-border pt-8 sm:grid-cols-3">
+                {[
+                  { value: "Since 2024", label: "Mentor-led since day one" },
+                  { value: "1200+", label: "Students taught" },
+                  { value: "48+", label: "Course tracks" },
+                ].map((s) => (
+                  <div key={s.value}>
+                    <p className="font-display text-2xl font-semibold text-primary sm:text-3xl">{s.value}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-9 flex flex-wrap gap-2.5">
+                {VALUES.map((v) => (
+                  <span
+                    key={v}
+                    className="rounded-xl border border-border bg-card px-4 py-2 text-xs font-medium text-foreground shadow-[var(--shadow-soft)]"
+                  >
+                    {v}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href="#courses"
+                className="mt-9 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-lift)] transition-transform hover:-translate-y-0.5"
+              >
+                Discover our journey <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
           </div>
         </section>
 
