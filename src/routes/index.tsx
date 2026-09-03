@@ -344,14 +344,31 @@ function Home() {
             ))}
           </div>
 
-          <h3 className="mt-16 text-center font-display text-2xl text-primary sm:text-3xl">Popular Courses</h3>
+          <h3 className="mt-16 text-center font-display text-2xl text-primary sm:text-3xl">
+            The Courses We Provide
+          </h3>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {POPULAR.map((p) => (
-              <div key={p} className="surface-card px-5 py-6 text-center">
-                <BookOpen className="mx-auto h-6 w-6 text-secondary" />
-                <p className="mt-3 text-sm font-medium text-foreground">{p}</p>
+            {(showAllCourses ? COURSE_LIST : COURSE_LIST.slice(0, 8)).map((c) => (
+              <div key={c.name} className="surface-card flex flex-col items-center px-5 py-6 text-center">
+                <img
+                  src={`${DEVICON}${c.icon}`}
+                  alt={`${c.name} logo`}
+                  loading="lazy"
+                  className="h-10 w-10 object-contain"
+                />
+                <p className="mt-3 text-sm font-medium text-foreground">{c.name}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-8 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAllCourses((v) => !v)}
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-primary shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5"
+            >
+              {showAllCourses ? "Show less" : "See more courses"}
+              <ArrowRight className={`h-4 w-4 transition-transform ${showAllCourses ? "-rotate-90" : ""}`} />
+            </button>
           </div>
         </section>
 
