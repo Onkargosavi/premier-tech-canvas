@@ -77,19 +77,25 @@ const COURSES = [
   },
 ];
 
-const POPULAR = [
-  "C Programming",
-  "C++",
-  "Core Java",
-  "Advanced Java",
-  "Spring Boot",
-  "Vaadin",
-  "Python",
-  "AWS Cloud",
-  "HTML/CSS",
-  "JavaScript",
-  "Bootstrap",
-  "PHP & MySQL",
+const DEVICON = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/";
+
+const COURSE_LIST = [
+  { name: "C Programming", icon: "c/c-original.svg" },
+  { name: "C++", icon: "cplusplus/cplusplus-original.svg" },
+  { name: "Core Java", icon: "java/java-original.svg" },
+  { name: "Advanced Java", icon: "java/java-original.svg" },
+  { name: "Spring Boot", icon: "spring/spring-original.svg" },
+  { name: "React", icon: "react/react-original.svg" },
+  { name: "Python", icon: "python/python-original.svg" },
+  { name: "AWS Cloud", icon: "amazonwebservices/amazonwebservices-original-wordmark.svg" },
+  { name: "HTML5 & CSS3", icon: "html5/html5-original.svg" },
+  { name: "JavaScript", icon: "javascript/javascript-original.svg" },
+  { name: "Bootstrap", icon: "bootstrap/bootstrap-original.svg" },
+  { name: "PHP & MySQL", icon: "php/php-original.svg" },
+  { name: "Node.js", icon: "nodejs/nodejs-original.svg" },
+  { name: "MongoDB", icon: "mongodb/mongodb-original.svg" },
+  { name: "TypeScript", icon: "typescript/typescript-original.svg" },
+  { name: "Docker", icon: "docker/docker-original.svg" },
 ];
 
 const FAQS = [
@@ -143,6 +149,7 @@ const TESTIMONIALS = [
 function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showAllCourses, setShowAllCourses] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
@@ -338,14 +345,31 @@ function Home() {
             ))}
           </div>
 
-          <h3 className="mt-16 text-center font-display text-2xl text-primary sm:text-3xl">Popular Courses</h3>
+          <h3 className="mt-16 text-center font-display text-2xl text-primary sm:text-3xl">
+            The Courses We Provide
+          </h3>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {POPULAR.map((p) => (
-              <div key={p} className="surface-card px-5 py-6 text-center">
-                <BookOpen className="mx-auto h-6 w-6 text-secondary" />
-                <p className="mt-3 text-sm font-medium text-foreground">{p}</p>
+            {(showAllCourses ? COURSE_LIST : COURSE_LIST.slice(0, 8)).map((c) => (
+              <div key={c.name} className="surface-card flex flex-col items-center px-5 py-6 text-center">
+                <img
+                  src={`${DEVICON}${c.icon}`}
+                  alt={`${c.name} logo`}
+                  loading="lazy"
+                  className="h-10 w-10 object-contain"
+                />
+                <p className="mt-3 text-sm font-medium text-foreground">{c.name}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-8 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAllCourses((v) => !v)}
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-primary shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5"
+            >
+              {showAllCourses ? "Show less" : "See more courses"}
+              <ArrowRight className={`h-4 w-4 transition-transform ${showAllCourses ? "-rotate-90" : ""}`} />
+            </button>
           </div>
         </section>
 
