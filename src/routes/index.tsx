@@ -254,59 +254,16 @@ function Home() {
                   Learn More
                 </a>
               </div>
-
-              <div className="mt-10 overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-soft)]">
-                <img
-                  src={heroImage}
-                  alt="Students learning software development at HATAEC TECH"
-                  width={1280}
-                  height={960}
-                  className="h-64 w-full object-cover sm:h-80"
-                />
-              </div>
             </div>
 
-            <div className="surface-card float-soft p-6 sm:p-8">
-              <h2 className="font-display text-xl font-semibold text-primary">Enquiry Form</h2>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Share your details, our counsellor calls back within 24 hours.
-              </p>
-              <form
-                className="mt-6 space-y-3"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  (e.currentTarget as HTMLFormElement).reset();
-                }}
-              >
-                <input required placeholder="Name" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-ring/25" />
-                <input required type="email" placeholder="Email" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-ring/25" />
-                <input required type="tel" placeholder="Phone No." className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-ring/25" />
-                <select
-                  required
-                  defaultValue=""
-                  className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition focus:border-secondary focus:ring-2 focus:ring-ring/25"
-                >
-                  <option value="" disabled>
-                    Enquiry For
-                  </option>
-                  {COURSES.map((c) => (
-                    <option key={c.title}>{c.title}</option>
-                  ))}
-                  <option>Internship</option>
-                  <option>Corporate Training</option>
-                </select>
-                <textarea
-                  rows={4}
-                  placeholder="How can we help?"
-                  className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-ring/25"
-                />
-                <button
-                  type="submit"
-                  className="w-full rounded-xl bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground transition-transform hover:-translate-y-0.5"
-                >
-                  Send Enquiry
-                </button>
-              </form>
+            <div className="animate-fade-in overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-soft)]">
+              <img
+                src={heroImage}
+                alt="Students learning software development at HATAEC TECH"
+                width={1280}
+                height={960}
+                className="h-80 w-full object-cover sm:h-[28rem] lg:h-[32rem]"
+              />
             </div>
           </div>
         </section>
@@ -393,35 +350,6 @@ function Home() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section id="faqs" className="mx-auto max-w-3xl px-5 py-16 lg:px-8">
-          <h2 className="text-center font-display text-3xl text-primary sm:text-4xl">FAQs</h2>
-          <div className="mt-8 space-y-3">
-            {FAQS.map((f, i) => {
-              const open = openFaq === i;
-              return (
-                <div key={f.q} className="overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)]">
-                  <button
-                    type="button"
-                    onClick={() => setOpenFaq(open ? null : i)}
-                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
-                  >
-                    <span className="text-sm font-medium text-foreground">{f.q}</span>
-                    {open ? (
-                      <Minus className="h-4 w-4 shrink-0 text-secondary" />
-                    ) : (
-                      <Plus className="h-4 w-4 shrink-0 text-muted-foreground" />
-                    )}
-                  </button>
-                  {open && (
-                    <p className="animate-fade-in px-5 pb-5 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
         {/* FEATURES */}
         <section className="border-y border-border bg-muted/40 py-16">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -474,6 +402,35 @@ function Home() {
                 </figure>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section id="faqs" className="mx-auto max-w-3xl px-5 py-16 lg:px-8">
+          <h2 className="text-center font-display text-3xl text-primary sm:text-4xl">FAQs</h2>
+          <div className="mt-8 space-y-3">
+            {FAQS.map((f, i) => {
+              const open = openFaq === i;
+              return (
+                <div key={f.q} className="overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)]">
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(open ? null : i)}
+                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                  >
+                    <span className="text-sm font-medium text-foreground">{f.q}</span>
+                    {open ? (
+                      <Minus className="h-4 w-4 shrink-0 text-secondary" />
+                    ) : (
+                      <Plus className="h-4 w-4 shrink-0 text-muted-foreground" />
+                    )}
+                  </button>
+                  {open && (
+                    <p className="animate-fade-in px-5 pb-5 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </section>
       </main>
