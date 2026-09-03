@@ -292,3 +292,86 @@
     transform: translateY(0);
   }
 }
+
+/* --- About collage --- */
+.collage-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: var(--muted);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s ease;
+
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition:
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 0.5s ease;
+  }
+
+  &:hover {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: var(--shadow-lift);
+  }
+
+  &:hover img {
+    transform: scale(1.07);
+    filter: brightness(1.06);
+  }
+}
+
+.collage-arrow,
+.collage-play {
+  position: absolute;
+  display: grid;
+  height: 2rem;
+  width: 2rem;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.82);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.45s ease;
+}
+
+.collage-arrow {
+  top: 0.7rem;
+  right: 0.7rem;
+
+  .collage-tile:hover & {
+    transform: rotate(45deg) scale(1.1);
+  }
+}
+
+.collage-play {
+  inset: 0;
+  margin: auto;
+  height: 3rem;
+  width: 3rem;
+
+  .collage-tile:hover & {
+    transform: scale(1.12);
+  }
+}
+
+.collage-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  color: var(--primary-foreground);
+  background: var(--gradient-primary, linear-gradient(135deg, var(--primary), var(--secondary)));
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
