@@ -350,35 +350,6 @@ function Home() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section id="faqs" className="mx-auto max-w-3xl px-5 py-16 lg:px-8">
-          <h2 className="text-center font-display text-3xl text-primary sm:text-4xl">FAQs</h2>
-          <div className="mt-8 space-y-3">
-            {FAQS.map((f, i) => {
-              const open = openFaq === i;
-              return (
-                <div key={f.q} className="overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)]">
-                  <button
-                    type="button"
-                    onClick={() => setOpenFaq(open ? null : i)}
-                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
-                  >
-                    <span className="text-sm font-medium text-foreground">{f.q}</span>
-                    {open ? (
-                      <Minus className="h-4 w-4 shrink-0 text-secondary" />
-                    ) : (
-                      <Plus className="h-4 w-4 shrink-0 text-muted-foreground" />
-                    )}
-                  </button>
-                  {open && (
-                    <p className="animate-fade-in px-5 pb-5 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
         {/* FEATURES */}
         <section className="border-y border-border bg-muted/40 py-16">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
