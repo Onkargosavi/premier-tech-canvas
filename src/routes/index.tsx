@@ -113,24 +113,6 @@ const FAQS = [
   },
 ];
 
-const FEATURES = [
-  {
-    icon: GraduationCap,
-    title: "Industry Curriculum",
-    detail: "Syllabus rebuilt every quarter with hiring managers so you learn what companies interview on.",
-  },
-  {
-    icon: UserRoundCheck,
-    title: "1:1 Mentorship",
-    detail: "Small batches with a dedicated mentor tracking your progress, code quality and interview prep.",
-  },
-  {
-    icon: BadgeCheck,
-    title: "Placement Support",
-    detail: "Portfolio, resume, mock drives and referrals continue until you sign your offer letter.",
-  },
-];
-
 const AWARDS = [
   "Best IT Training Institute 2024",
   "Excellence in Placements",
